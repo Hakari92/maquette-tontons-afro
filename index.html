@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0d0906">
+<meta name="theme-color" content="#FFD600">
 
 <!-- SEO LOCAL — Les Tontons Afro Lille -->
 <title>Les Tontons Afro — Cuisine Afronomique | Lille Vieux-Lille</title>
-<meta name="description" content="Les Tontons Afro, cuisine afronomique au coeur du Vieux-Lille. Poulet Yassa, Mafe de Boeuf, burgers afro, plats halal, vegetariens et vegan. 42 Rue de la Monnaie. Reservation, click & collect, traiteur, privatisation.">
-<meta name="keywords" content="restaurant africain Lille, cuisine afronomique, Les Tontons Afro, halal Lille, Vieux-Lille restaurant, Poulet Yassa Lille, Mafe Lille, burger afro, traiteur africain Lille">
+<meta name="description" content="Les Tontons Afro, cuisine afronomique au coeur du Vieux-Lille. Poulet Yassa, Mafe, burgers afro, cocktails exotiques. Carte 100% halal, options vegetariennes et vegan. 42 Rue de la Monnaie. Reservation, click & collect, traiteur, privatisation.">
+<meta name="keywords" content="restaurant africain Lille, cuisine afronomique, Les Tontons Afro, halal Lille, Vieux-Lille restaurant, Poulet Yassa Lille, Mafe Lille, burger afro, traiteur africain Lille, click and collect Lille">
 <meta name="geo.region" content="FR-59">
 <meta name="geo.placename" content="Lille">
 <meta name="author" content="Les Tontons Afro — Tonton Gaudrey">
@@ -17,6 +17,7 @@
 <meta property="og:type" content="restaurant">
 <meta property="og:title" content="Les Tontons Afro — Cuisine Afronomique | Lille">
 <meta property="og:description" content="Cuisine afronomique au coeur du Vieux-Lille. Halal, vegetarien, vegan. Reservation en ligne.">
+<meta property="og:image" content="https://www.lestontonsafro.fr/wp-content/uploads/2023/11/Home-Slideshow-4-1170x660-c-center.jpg">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:url" content="https://www.lestontonsafro.fr/">
 
@@ -35,7 +36,7 @@
     "addressCountry": "FR"
   },
   "telephone": "+33766385371",
-  "servesCuisine": ["African", "Afro-fusion", "Halal"],
+  "servesCuisine": ["African", "Afro-Caribbean", "Halal"],
   "priceRange": "$$",
   "aggregateRating": {
     "@type": "AggregateRating",
@@ -47,7 +48,18 @@
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "19:00", "closes": "23:00"},
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "19:00", "closes": "23:00"},
     {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "12:00", "closes": "23:00"}
-  ]
+  ],
+  "hasMenu": {
+    "@type": "Menu",
+    "hasMenuSection": [
+      {"@type": "MenuSection", "name": "Afro-Tapas"},
+      {"@type": "MenuSection", "name": "Afro Burgers"},
+      {"@type": "MenuSection", "name": "Plats"},
+      {"@type": "MenuSection", "name": "Croisieres Grill"},
+      {"@type": "MenuSection", "name": "Cocktails"},
+      {"@type": "MenuSection", "name": "Desserts"}
+    ]
+  }
 }
 </script>
 
@@ -57,29 +69,30 @@
 
 <style>
 /* ============================================
-   LES TONTONS AFRO — Maquette Premium
+   LES TONTONS AFRO — Maquette Premium V2
    by Common Studio
-   Codes: Afronomique, warm earth, gold accents
+   Palette: JAUNE / ROSE / BLEU / NOIR
+   Vibrant & Colorful — Afronomique Energy
    ============================================ */
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg-deep: #080604;
-  --bg-dark: #0d0906;
-  --bg-card: #161210;
-  --bg-card-hover: #1e1814;
-  --bg-warm: #1a1410;
-  --accent-gold: #C8964E;
-  --accent-orange: #E8722A;
-  --accent-amber: #D4A843;
-  --accent-red: #B5332E;
-  --accent-green: #4A7C59;
-  --text-cream: #F5EDE4;
-  --text-warm: #D4C4B0;
-  --text-muted: #9A8A7A;
-  --text-dim: #6B5B4A;
-  --gradient-afro: linear-gradient(135deg, #E8722A 0%, #D4A843 50%, #C8964E 100%);
-  --gradient-warm: linear-gradient(180deg, rgba(232,114,42,0.08) 0%, transparent 60%);
+  --yellow: #FFD600;
+  --yellow-dark: #E6C200;
+  --pink: #FF6B9D;
+  --pink-hot: #FF3D7F;
+  --blue: #00B4D8;
+  --blue-light: #48CAE4;
+  --orange: #FF8A00;
+  --red: #E63946;
+  --green: #2D6A4F;
+  --black: #0A0A0A;
+  --black-soft: #1A1A1A;
+  --black-card: #151515;
+  --white: #FFFFFF;
+  --cream: #FFF8E7;
+  --text-dark: #1A1A1A;
+  --text-muted: #666;
   --font-display: 'Playfair Display', serif;
   --font-heading: 'Bebas Neue', sans-serif;
   --font-body: 'Inter', sans-serif;
@@ -91,75 +104,83 @@ html { scroll-behavior: smooth; }
 
 body {
   font-family: var(--font-body);
-  background: var(--bg-dark);
-  color: var(--text-cream);
+  background: var(--black);
+  color: var(--white);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* ===== UTILITY ===== */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+
+/* ===== MARQUEE BANNER ===== */
+.marquee-banner {
+  background: var(--black);
+  padding: 10px 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+.marquee-track {
+  display: inline-block;
+  animation: marquee 20s linear infinite;
+  font-size: 0.8rem;
+  color: var(--white);
+  letter-spacing: 0.5px;
+}
+.marquee-track a { color: var(--yellow); text-decoration: none; font-weight: 600; }
+@keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
 /* ===== NAV ===== */
 .nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-  background: rgba(8,6,4,0.88);
+  background: rgba(10,10,10,0.92);
   backdrop-filter: blur(24px) saturate(1.5);
-  border-bottom: 1px solid rgba(200,150,78,0.08);
+  border-bottom: 1px solid rgba(255,214,0,0.15);
   height: 72px;
   display: flex; align-items: center;
   padding: 0 clamp(1rem, 4vw, 3rem);
-  transition: all 0.3s;
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-w); margin: 0 auto; }
-.nav-brand {
-  display: flex; align-items: center; gap: 12px;
-}
+.nav-brand { display: flex; align-items: center; gap: 12px; }
 .nav-brand-icon {
-  width: 38px; height: 38px;
-  background: var(--gradient-afro);
-  border-radius: 10px;
+  width: 42px; height: 42px;
+  background: var(--yellow);
+  border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
 }
 .nav-brand-text {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
-  letter-spacing: 2px;
-  color: var(--text-cream);
+  font-size: 1.4rem;
+  letter-spacing: 3px;
+  color: var(--white);
 }
 .nav-links { display: flex; gap: 2.5rem; list-style: none; }
 .nav-links a {
-  color: var(--text-muted);
+  color: rgba(255,255,255,0.7);
   text-decoration: none;
   font-size: 0.8rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   transition: color 0.3s;
-  position: relative;
 }
-.nav-links a:hover { color: var(--accent-gold); }
-.nav-links a::after {
-  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
-  background: var(--accent-gold); transition: width 0.3s;
-}
-.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover { color: var(--yellow); }
 .nav-actions { display: flex; gap: 12px; align-items: center; }
 .nav-btn {
   padding: 10px 22px;
-  border-radius: 8px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.8rem;
   letter-spacing: 0.5px;
   transition: all 0.3s;
 }
-.nav-btn--ghost { color: var(--accent-gold); border: 1px solid rgba(200,150,78,0.3); background: transparent; }
-.nav-btn--ghost:hover { background: rgba(200,150,78,0.1); }
-.nav-btn--fill { background: var(--accent-orange); color: #fff; border: none; }
-.nav-btn--fill:hover { background: #d4631f; transform: translateY(-1px); }
+.nav-btn--ghost { color: var(--yellow); border: 2px solid var(--yellow); background: transparent; }
+.nav-btn--ghost:hover { background: var(--yellow); color: var(--black); }
+.nav-btn--fill { background: var(--pink-hot); color: #fff; border: 2px solid var(--pink-hot); }
+.nav-btn--fill:hover { background: #e62e6b; transform: translateY(-1px); }
 
 /* ===== HERO ===== */
 .hero {
@@ -168,92 +189,78 @@ body {
   padding: 100px 2rem 80px;
   position: relative;
   overflow: hidden;
-  background: var(--bg-deep);
-}
-.hero::before {
-  content: '';
-  position: absolute; inset: 0;
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(232,114,42,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 30%, rgba(200,150,78,0.1) 0%, transparent 40%),
-    radial-gradient(ellipse at 50% 90%, rgba(181,51,46,0.08) 0%, transparent 40%);
-}
-.hero::after {
-  content: '';
-  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
-  background: linear-gradient(transparent, var(--bg-dark));
+  background: var(--yellow);
 }
 .hero-inner {
   position: relative; z-index: 1;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
   max-width: var(--max-w); margin: 0 auto; width: 100%;
 }
-.hero-content { }
+.hero-content { color: var(--black); }
 .hero-eyebrow {
   display: inline-flex; align-items: center; gap: 8px;
-  background: rgba(200,150,78,0.1);
-  border: 1px solid rgba(200,150,78,0.2);
+  background: rgba(0,0,0,0.1);
   border-radius: 50px;
-  padding: 6px 16px;
+  padding: 8px 18px;
   font-size: 0.75rem;
-  color: var(--accent-gold);
-  font-weight: 600;
+  color: var(--black);
+  font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
-.hero-eyebrow .dot { width: 6px; height: 6px; background: var(--accent-orange); border-radius: 50%; }
+.hero-eyebrow .dot { width: 8px; height: 8px; background: var(--pink-hot); border-radius: 50%; }
 
 .hero h1 {
-  font-family: var(--font-display);
-  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-family: var(--font-heading);
+  font-size: clamp(3.5rem, 7vw, 6rem);
   font-weight: 900;
-  line-height: 1.05;
+  line-height: 0.95;
   margin-bottom: 1.5rem;
-  color: var(--text-cream);
+  color: var(--black);
+  letter-spacing: 2px;
 }
 .hero h1 em {
   font-style: italic;
-  background: var(--gradient-afro);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: var(--font-display);
+  color: var(--pink-hot);
+  letter-spacing: 0;
 }
 .hero-desc {
-  font-size: 1.05rem;
-  color: var(--text-warm);
+  font-size: 1.1rem;
+  color: rgba(0,0,0,0.75);
   max-width: 480px;
   margin-bottom: 2rem;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.7;
 }
 .hero-tags {
   display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 2.5rem;
 }
 .hero-tag {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.08);
+  border: 2px solid rgba(0,0,0,0.15);
   border-radius: 50px;
-  padding: 6px 14px;
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-weight: 500;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  color: var(--black);
+  font-weight: 700;
 }
 .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn-lg {
   padding: 16px 32px;
-  border-radius: 12px;
+  border-radius: 50px;
   text-decoration: none;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.9rem;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.5px;
   transition: all 0.3s;
   display: inline-flex; align-items: center; gap: 8px;
 }
-.btn-lg--primary { background: var(--accent-orange); color: #fff; }
-.btn-lg--primary:hover { background: #d4631f; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,114,42,0.25); }
-.btn-lg--outline { border: 1px solid rgba(200,150,78,0.3); color: var(--accent-gold); background: transparent; }
-.btn-lg--outline:hover { background: rgba(200,150,78,0.08); }
+.btn-lg--primary { background: var(--black); color: var(--yellow); }
+.btn-lg--primary:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+.btn-lg--outline { border: 2px solid var(--black); color: var(--black); background: transparent; }
+.btn-lg--outline:hover { background: rgba(0,0,0,0.08); }
 
 /* Hero visual */
 .hero-visual {
@@ -262,57 +269,44 @@ body {
 }
 .hero-img-main {
   width: 100%; aspect-ratio: 4/5;
-  background: var(--bg-card);
   border-radius: 24px;
-  border: 1px solid rgba(200,150,78,0.1);
   overflow: hidden;
   position: relative;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
 }
 .hero-img-main img {
   width: 100%; height: 100%; object-fit: cover;
 }
-.hero-img-main .placeholder-text {
-  position: absolute; inset: 0;
-  display: flex; align-items: center; justify-content: center;
-  flex-direction: column; gap: 8px;
-  color: var(--text-dim);
-  font-size: 0.8rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-}
-.hero-img-main .placeholder-text span { font-size: 3rem; }
 
 .hero-float-card {
   position: absolute; bottom: -20px; left: -30px;
-  background: rgba(22,18,16,0.95);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(200,150,78,0.15);
+  background: var(--black);
+  border: 2px solid var(--yellow);
   border-radius: 16px;
   padding: 16px 20px;
   display: flex; align-items: center; gap: 14px;
 }
-.hero-float-card .rating { font-family: var(--font-heading); font-size: 2rem; color: var(--accent-gold); }
-.hero-float-card .rating-text { font-size: 0.75rem; color: var(--text-muted); }
-.hero-float-card .rating-text strong { color: var(--text-cream); display: block; font-size: 0.85rem; }
+.hero-float-card .rating { font-family: var(--font-heading); font-size: 2rem; color: var(--yellow); }
+.hero-float-card .rating-text { font-size: 0.75rem; color: rgba(255,255,255,0.6); }
+.hero-float-card .rating-text strong { color: var(--white); display: block; font-size: 0.85rem; }
 
 .hero-float-badge {
   position: absolute; top: 20px; right: -15px;
-  background: var(--accent-green);
+  background: var(--green);
   color: #fff;
   border-radius: 50px;
-  padding: 8px 16px;
-  font-size: 0.7rem;
-  font-weight: 700;
+  padding: 10px 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
 }
 
-/* ===== SOCIAL PROOF BAR ===== */
+/* ===== PROOF BAR ===== */
 .proof-bar {
   padding: 2rem;
-  background: var(--bg-deep);
-  border-top: 1px solid rgba(200,150,78,0.06);
-  border-bottom: 1px solid rgba(200,150,78,0.06);
+  background: var(--pink-hot);
+  overflow: hidden;
 }
 .proof-inner {
   max-width: var(--max-w); margin: 0 auto;
@@ -321,195 +315,341 @@ body {
 }
 .proof-item {
   display: flex; align-items: center; gap: 10px;
-  color: var(--text-muted);
-  font-size: 0.85rem;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.9rem;
+  font-weight: 600;
 }
-.proof-item strong { color: var(--accent-gold); font-size: 1.1rem; }
-.proof-sep { width: 1px; height: 30px; background: rgba(200,150,78,0.15); }
+.proof-item strong { color: var(--white); font-size: 1.3rem; font-family: var(--font-heading); letter-spacing: 1px; }
+.proof-sep { width: 2px; height: 30px; background: rgba(255,255,255,0.3); }
+
+/* ===== CONCEPT MARQUEE ===== */
+.concept-marquee {
+  background: var(--black);
+  padding: 15px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.concept-marquee-track {
+  display: inline-block;
+  animation: marquee 15s linear infinite;
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  color: rgba(255,255,255,0.15);
+  letter-spacing: 8px;
+}
 
 /* ===== CONCEPT ===== */
-.concept { padding: 100px 2rem; background: var(--bg-dark); }
-.concept-grid {
-  max-width: var(--max-w); margin: 0 auto;
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+.concept {
+  padding: 100px 2rem;
+  background: var(--yellow);
+  color: var(--black);
 }
-.concept-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(200,150,78,0.08);
-  border-radius: var(--radius);
-  padding: 2.5rem 2rem;
-  transition: all 0.4s;
-  position: relative; overflow: hidden;
-}
-.concept-card::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--gradient-afro); opacity: 0; transition: opacity 0.4s;
-}
-.concept-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); }
-.concept-card:hover::before { opacity: 1; }
-.concept-icon { font-size: 2rem; margin-bottom: 1rem; }
-.concept-card h3 {
-  font-family: var(--font-heading);
-  font-size: 1.3rem;
-  letter-spacing: 1px;
-  color: var(--text-cream);
-  margin-bottom: 0.5rem;
-}
-.concept-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
-
-/* ===== MENU SECTION ===== */
-.menu-section { padding: 100px 2rem; background: linear-gradient(var(--bg-dark), var(--bg-deep)); }
-.section-header {
-  text-align: center; margin-bottom: 3.5rem;
-}
+.section-header { text-align: center; margin-bottom: 3.5rem; }
 .section-header .label {
-  font-size: 0.75rem; color: var(--accent-gold);
-  text-transform: uppercase; letter-spacing: 3px; font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: 3px; font-weight: 700;
   margin-bottom: 0.8rem;
 }
 .section-header h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 900;
-  color: var(--text-cream);
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 5vw, 4.5rem);
+  letter-spacing: 3px;
 }
 .section-header h2 em {
   font-style: italic;
-  color: var(--accent-gold);
+  font-family: var(--font-display);
 }
-.section-header p {
-  color: var(--text-muted); font-size: 1rem; margin-top: 0.5rem; max-width: 500px; margin-left: auto; margin-right: auto;
+.section-header p.sub {
+  font-size: 1.1rem; margin-top: 0.5rem; max-width: 550px; margin-left: auto; margin-right: auto;
+  opacity: 0.8;
 }
+
+.concept .section-header .label { color: var(--pink-hot); }
+.concept .section-header h2 { color: var(--black); }
+.concept .section-header h2 em { color: var(--pink-hot); }
+
+.concept-grid {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center;
+}
+.concept-photo {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+}
+.concept-photo img { width: 100%; height: auto; display: block; }
+.concept-text h3 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+.concept-text p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  opacity: 0.8;
+  margin-bottom: 1rem;
+}
+.concept-values {
+  display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1.5rem;
+}
+.concept-value {
+  background: rgba(0,0,0,0.08);
+  border: 2px solid rgba(0,0,0,0.12);
+  border-radius: 50px;
+  padding: 8px 18px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--black);
+}
+
+/* ===== MENU SECTION ===== */
+.menu-section {
+  padding: 100px 2rem;
+  background: var(--black);
+}
+.menu-section .section-header .label { color: var(--yellow); }
+.menu-section .section-header h2 { color: var(--white); }
+.menu-section .section-header h2 em { color: var(--yellow); }
+.menu-section .section-header p.sub { color: rgba(255,255,255,0.5); }
+
+/* Menu tabs */
+.menu-tabs {
+  display: flex; justify-content: center; gap: 8px; margin-bottom: 2.5rem; flex-wrap: wrap;
+}
+.menu-tab {
+  padding: 10px 20px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 2px solid rgba(255,255,255,0.1);
+  background: transparent;
+  color: rgba(255,255,255,0.5);
+}
+.menu-tab.active, .menu-tab:hover {
+  background: var(--yellow);
+  color: var(--black);
+  border-color: var(--yellow);
+}
+
 .menu-grid {
   max-width: 1000px; margin: 0 auto;
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem;
 }
 .menu-item {
-  background: var(--bg-card);
-  border: 1px solid rgba(200,150,78,0.08);
+  background: var(--black-card);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: 14px;
   padding: 24px 28px;
   display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
   transition: all 0.3s;
 }
 .menu-item:hover {
-  background: var(--bg-card-hover);
-  border-color: rgba(200,150,78,0.2);
+  border-color: var(--yellow);
+  transform: translateY(-2px);
 }
 .menu-item h4 {
   font-family: var(--font-heading);
   font-size: 1.2rem;
-  letter-spacing: 0.5px;
-  color: var(--text-cream);
+  letter-spacing: 1px;
+  color: var(--white);
   margin-bottom: 4px;
 }
-.menu-item .desc { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
+.menu-item .origin {
+  color: var(--yellow);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+.menu-item .desc { color: rgba(255,255,255,0.45); font-size: 0.82rem; line-height: 1.5; }
 .menu-item .badge {
   display: inline-block; margin-top: 8px;
-  background: rgba(200,150,78,0.1); color: var(--accent-gold);
+  background: rgba(255,214,0,0.12); color: var(--yellow);
   padding: 3px 10px; border-radius: 20px; font-size: 0.7rem;
-  font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+  font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;
 }
+.menu-item .badge--vegan { background: rgba(45,106,79,0.2); color: #52b788; }
+.menu-item .badge--hot { background: rgba(230,57,70,0.15); color: var(--red); }
 .menu-item .price {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
-  color: var(--accent-orange);
+  font-size: 1.4rem;
+  color: var(--pink-hot);
   white-space: nowrap;
   flex-shrink: 0;
 }
 .menu-cta { text-align: center; margin-top: 2.5rem; }
+.menu-cta .btn-lg--outline { border-color: var(--yellow); color: var(--yellow); }
+.menu-cta .btn-lg--outline:hover { background: var(--yellow); color: var(--black); }
+
+/* ===== COCKTAILS ===== */
+.cocktails {
+  padding: 80px 2rem;
+  background: linear-gradient(135deg, #1a0a2e 0%, #0d0d2d 50%, #0a1a2a 100%);
+}
+.cocktails .section-header .label { color: var(--blue-light); }
+.cocktails .section-header h2 { color: var(--white); }
+.cocktails .section-header h2 em { color: var(--blue-light); }
+.cocktails-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.cocktail-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 14px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.cocktail-card:hover { border-color: var(--blue-light); transform: translateY(-3px); }
+.cocktail-card .emoji { font-size: 2.5rem; margin-bottom: 12px; }
+.cocktail-card .country { color: var(--blue-light); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px; }
+.cocktail-card h4 { font-family: var(--font-heading); font-size: 1.2rem; color: var(--white); letter-spacing: 1px; margin-bottom: 4px; }
+.cocktail-card .desc { color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+.cocktail-card .price { color: var(--pink); font-family: var(--font-heading); font-size: 1.2rem; margin-top: 8px; }
+
+/* ===== PHOTO GALLERY STRIP ===== */
+.gallery-strip {
+  padding: 0;
+  display: flex;
+  overflow: hidden;
+  height: 350px;
+}
+.gallery-strip img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  flex-shrink: 0;
+}
 
 /* ===== SERVICES ===== */
-.services { padding: 80px 2rem; background: var(--bg-deep); }
+.services { padding: 80px 2rem; background: var(--blue); color: var(--black); }
+.services .section-header .label { color: var(--black); opacity: 0.6; }
+.services .section-header h2 { color: var(--black); }
+.services .section-header h2 em { color: var(--white); }
 .services-grid {
   max-width: var(--max-w); margin: 0 auto;
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
 }
 .service-card {
-  background: var(--bg-card);
-  border: 1px solid rgba(200,150,78,0.06);
+  background: rgba(0,0,0,0.1);
+  border: 2px solid rgba(0,0,0,0.1);
   border-radius: var(--radius);
   padding: 2rem 1.5rem;
   text-align: center;
   transition: all 0.3s;
 }
-.service-card:hover { border-color: rgba(200,150,78,0.2); transform: translateY(-3px); }
-.service-card .icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.service-card:hover { background: rgba(0,0,0,0.2); transform: translateY(-3px); border-color: var(--black); }
+.service-card .icon { font-size: 2.5rem; margin-bottom: 0.8rem; }
 .service-card h4 {
-  font-family: var(--font-heading); font-size: 1.1rem;
-  letter-spacing: 1px; color: var(--text-cream); margin-bottom: 0.4rem;
+  font-family: var(--font-heading); font-size: 1.2rem;
+  letter-spacing: 1px; color: var(--black); margin-bottom: 0.4rem;
 }
-.service-card p { color: var(--text-dim); font-size: 0.8rem; }
+.service-card p { color: rgba(0,0,0,0.6); font-size: 0.85rem; }
+
+/* ===== DESSERTS ===== */
+.desserts {
+  padding: 80px 2rem;
+  background: var(--pink);
+  color: var(--white);
+}
+.desserts .section-header .label { color: var(--white); opacity: 0.7; }
+.desserts .section-header h2 { color: var(--white); }
+.desserts .section-header h2 em { color: var(--yellow); }
+.desserts-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
+}
+.dessert-card {
+  background: rgba(0,0,0,0.15);
+  border-radius: 14px;
+  padding: 24px;
+  transition: all 0.3s;
+}
+.dessert-card:hover { background: rgba(0,0,0,0.25); transform: translateY(-3px); }
+.dessert-card .emoji { font-size: 2rem; margin-bottom: 10px; }
+.dessert-card .country { color: var(--yellow); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px; }
+.dessert-card h4 { font-family: var(--font-heading); font-size: 1.1rem; letter-spacing: 1px; margin-bottom: 4px; }
+.dessert-card .desc { color: rgba(255,255,255,0.7); font-size: 0.8rem; line-height: 1.5; }
+.dessert-card .price { font-family: var(--font-heading); font-size: 1.2rem; color: var(--yellow); margin-top: 8px; }
 
 /* ===== CONTACT ===== */
-.contact { padding: 100px 2rem; background: var(--bg-dark); }
+.contact { padding: 100px 2rem; background: var(--black); }
+.contact .section-header .label { color: var(--yellow); }
+.contact .section-header h2 { color: var(--white); }
+.contact .section-header h2 em { color: var(--yellow); }
 .contact-grid {
   max-width: 900px; margin: 0 auto;
   display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
 }
 .contact-info {
-  background: var(--bg-card);
-  border: 1px solid rgba(200,150,78,0.1);
+  background: var(--black-card);
+  border: 1px solid rgba(255,214,0,0.15);
   border-radius: var(--radius);
   padding: 2.5rem;
 }
 .contact-info h3 {
-  font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
-  margin-bottom: 1.5rem; color: var(--text-cream);
+  font-family: var(--font-heading); font-size: 2rem; letter-spacing: 2px;
+  margin-bottom: 1.5rem; color: var(--yellow);
 }
 .info-line {
   display: flex; align-items: flex-start; gap: 14px;
   padding: 14px 0;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  color: var(--text-warm); font-size: 0.9rem;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  color: rgba(255,255,255,0.7); font-size: 0.9rem;
 }
 .info-line:last-child { border-bottom: none; }
 .info-line .icon-sm {
-  width: 36px; height: 36px;
-  background: rgba(200,150,78,0.1);
-  border-radius: 10px;
+  width: 40px; height: 40px;
+  background: rgba(255,214,0,0.1);
+  border-radius: 12px;
   display: flex; align-items: center; justify-content: center;
-  font-size: 1rem; flex-shrink: 0;
+  font-size: 1.1rem; flex-shrink: 0;
 }
-
 .contact-map {
-  background: var(--bg-card);
-  border: 1px solid rgba(200,150,78,0.1);
+  background: var(--black-card);
+  border: 1px solid rgba(255,214,0,0.15);
   border-radius: var(--radius);
   overflow: hidden;
   position: relative;
   min-height: 300px;
 }
-.contact-map iframe { width: 100%; height: 100%; border: 0; filter: invert(0.92) hue-rotate(180deg) brightness(0.8) contrast(1.2); }
+.contact-map iframe { width: 100%; height: 100%; border: 0; }
 
 /* ===== FOOTER ===== */
 .footer {
-  background: var(--bg-deep);
+  background: var(--yellow);
   padding: 3rem 2rem 2rem;
-  border-top: 1px solid rgba(200,150,78,0.06);
+  color: var(--black);
 }
 .footer-inner {
   max-width: var(--max-w); margin: 0 auto;
   display: flex; justify-content: space-between; align-items: center;
 }
-.footer-brand { font-family: var(--font-heading); font-size: 1.2rem; letter-spacing: 2px; color: var(--text-muted); }
+.footer-brand { font-family: var(--font-heading); font-size: 1.4rem; letter-spacing: 3px; color: var(--black); }
 .footer-socials { display: flex; gap: 12px; }
 .footer-socials a {
-  width: 40px; height: 40px;
-  background: var(--bg-card);
-  border: 1px solid rgba(200,150,78,0.1);
-  border-radius: 10px;
+  width: 42px; height: 42px;
+  background: var(--black);
+  border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  color: var(--text-muted); text-decoration: none; font-size: 1.1rem;
+  color: var(--yellow); text-decoration: none; font-size: 1.1rem;
   transition: all 0.3s;
 }
-.footer-socials a:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+.footer-socials a:hover { transform: scale(1.1); }
 .footer-credit {
   text-align: center; margin-top: 2rem; padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.04);
-  font-size: 0.75rem; color: var(--text-dim);
+  border-top: 2px solid rgba(0,0,0,0.1);
+  font-size: 0.8rem; color: rgba(0,0,0,0.5);
 }
-.footer-credit a { color: var(--accent-orange); text-decoration: none; }
+.footer-credit a { color: var(--black); text-decoration: none; font-weight: 700; }
 
 /* ===== RESPONSIVE ===== */
 @media (max-width: 900px) {
@@ -517,13 +657,16 @@ body {
   .hero-desc { margin-left: auto; margin-right: auto; }
   .hero-tags { justify-content: center; }
   .hero-actions { justify-content: center; }
-  .hero-visual { display: none; }
+  .hero-visual { margin-top: 2rem; }
   .menu-grid { grid-template-columns: 1fr; }
   .concept-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .cocktails-grid { grid-template-columns: 1fr; }
+  .desserts-grid { grid-template-columns: 1fr; }
   .contact-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
   .footer-inner { flex-direction: column; gap: 1rem; }
+  .gallery-strip { height: 200px; }
 }
 
 /* ===== ANIMATIONS ===== */
@@ -550,6 +693,7 @@ body {
     <ul class="nav-links">
       <li><a href="#concept">Concept</a></li>
       <li><a href="#menu">Carte</a></li>
+      <li><a href="#cocktails">Cocktails</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -568,10 +712,10 @@ body {
         <span class="dot"></span>
         Cuisine Afronomique — Vieux-Lille
       </div>
-      <h1>L'Afrique<br>dans votre <em>assiette</em></h1>
-      <p class="hero-desc">Des saveurs d'Afrique de l'Ouest revisitees avec audace. Halal, vegetarien, vegan — tout le monde a sa place chez les Tontons.</p>
+      <h1>L'AFRIQUE<br>DANS VOTRE<br><em>assiette</em></h1>
+      <p class="hero-desc">Premiere compagnie aerienne low cost a destination des pays afro-caribeens ! Halal, vegetarien, vegan — tout le monde a sa place chez les Tontons.</p>
       <div class="hero-tags">
-        <span class="hero-tag">Halal certifie</span>
+        <span class="hero-tag">100% Halal</span>
         <span class="hero-tag">Vegetarien</span>
         <span class="hero-tag">Vegan</span>
         <span class="hero-tag">Sans gluten</span>
@@ -583,10 +727,7 @@ body {
     </div>
     <div class="hero-visual">
       <div class="hero-img-main">
-        <div class="placeholder-text">
-          <span>🍔</span>
-          Photo Hero<br>Plat signature
-        </div>
+        <img src="https://www.lestontonsafro.fr/wp-content/uploads/2023/11/Home-Slideshow-4-1170x660-c-center.jpg" alt="Burger afro signature Les Tontons Afro" loading="eager">
       </div>
       <div class="hero-float-card">
         <div class="rating">4.6</div>
@@ -613,90 +754,244 @@ body {
   </div>
 </div>
 
+<!-- CONCEPT MARQUEE -->
+<div class="concept-marquee">
+  <div class="concept-marquee-track">
+    CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull;&nbsp;
+    CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull;&nbsp;
+  </div>
+</div>
+
 <!-- CONCEPT -->
 <section id="concept" class="concept">
   <div class="section-header">
     <p class="label">Notre philosophie</p>
-    <h2>La cuisine <em>Afronomique</em></h2>
-    <p>Plus qu'un restaurant, une experience culturelle au coeur du Vieux-Lille</p>
+    <h2>LA CUISINE <em>Afronomique</em></h2>
   </div>
   <div class="concept-grid">
-    <div class="concept-card">
-      <div class="concept-icon">🌍</div>
-      <h3>HERITAGE AFRICAIN</h3>
-      <p>Des recettes transmises de generation en generation, revisitees avec une touche contemporaine par Tonton Gaudrey.</p>
+    <div class="concept-photo">
+      <img src="https://www.lestontonsafro.fr/wp-content/uploads/2025/11/Tonton-Gaudrey-avec-le-Poulet-Yassa-610x844-c-default.png" alt="Tonton Gaudrey avec Poulet Yassa" loading="lazy">
     </div>
-    <div class="concept-card">
-      <div class="concept-icon">🔥</div>
-      <h3>FAIT MAISON</h3>
-      <p>Chaque sauce, chaque marinade, chaque accompagnement est prepare sur place avec des produits frais selectionnes.</p>
-    </div>
-    <div class="concept-card">
-      <div class="concept-icon">🤝</div>
-      <h3>POUR TOUS</h3>
-      <p>Halal certifie, options vegetariennes, vegan et sans gluten. Chez les Tontons, tout le monde mange bien.</p>
+    <div class="concept-text">
+      <h3>Tonton Gaudrey</h3>
+      <p>Passionne par l'entrepreneuriat et l'Afrique, Tonton Gaudrey a lance une aventure alliant ces deux aspects avec l'ambition de creer le plus grand reseau de restaurants afro en France.</p>
+      <p>Chez Les Tontons Afro, on n'oublie personne ! Halal, gluten free, vegetarien, vegan, carnivore — tout le monde trouvera son compte dans notre menu.</p>
+      <div class="concept-values">
+        <span class="concept-value">🌍 Heritage Africain</span>
+        <span class="concept-value">🔥 Fait Maison</span>
+        <span class="concept-value">🤝 Pour Tous</span>
+        <span class="concept-value">✈️ Voyage Culinaire</span>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- PHOTO GALLERY -->
+<div class="gallery-strip">
+  <img src="https://www.lestontonsafro.fr/wp-content/uploads/2025/01/1701682012379-1170x660-c-center.jpg" alt="Plat Les Tontons Afro" loading="lazy">
+  <img src="https://www.lestontonsafro.fr/wp-content/uploads/2025/01/Alterte-a-abidjan-1170x660-c-center.jpg" alt="Alerte a Abidjan" loading="lazy">
+  <img src="https://www.lestontonsafro.fr/wp-content/uploads/2025/01/1701682012364-1170x660-c-center.jpg" alt="Plat signature" loading="lazy">
+  <img src="https://www.lestontonsafro.fr/wp-content/uploads/2025/01/Surf-and-turf-610x844-c-center.jpg" alt="Surf and Turf" loading="lazy">
+  <img src="https://www.lestontonsafro.fr/wp-content/uploads/2025/01/Jambo-au-coeur-830x1225-c-center.jpg" alt="Jambo au Coeur" loading="lazy">
+</div>
+
 <!-- MENU -->
 <section id="menu" class="menu-section">
   <div class="section-header">
-    <p class="label">Nos plats signatures</p>
-    <h2>La <em>Carte</em></h2>
-    <p>Saveurs authentiques d'Afrique de l'Ouest</p>
+    <p class="label">Attachez vos ceintures, bon voyage !</p>
+    <h2>LA <em>Carte</em></h2>
+    <p class="sub">Chaque plat est une escale dans un pays d'Afrique ou des Caraibes</p>
   </div>
+
+  <div class="menu-tabs">
+    <span class="menu-tab active">Afro-Tapas</span>
+    <span class="menu-tab">Burgers</span>
+    <span class="menu-tab">Plats</span>
+    <span class="menu-tab">Croisieres Grill</span>
+  </div>
+
   <div class="menu-grid">
+    <!-- TAPAS -->
     <div class="menu-item">
       <div>
-        <h4>POULET YASSA</h4>
-        <p class="desc">Poulet marine aux oignons caramelises, citron, moutarde, olives. Servi avec riz parfume.</p>
-        <span class="badge">Signature du chef</span>
+        <p class="origin">Jamaique</p>
+        <h4>DIS-MOI WINGS</h4>
+        <p class="desc">Ailes de poulet marinees aux epices secretes des Tontons a base de tomates explosives en bouche</p>
+        <span class="badge badge--hot">🔥 Signature</span>
       </div>
-      <span class="price">18,90 EUR</span>
+      <span class="price">9,90</span>
     </div>
     <div class="menu-item">
       <div>
-        <h4>MAFE DE BOEUF</h4>
-        <p class="desc">Ragoute de boeuf mijoter dans une sauce onctueuse a l'arachide, legumes de saison.</p>
+        <p class="origin">Tour de l'Afrique</p>
+        <h4>JAMBO AU COEUR ❤️</h4>
+        <p class="desc">Planche gourmande d'afrotapas a partager : wings, pastels, plantains, patates douces, 3 sauces</p>
+        <span class="badge">Pour 2-3 pers.</span>
+      </div>
+      <span class="price">24,90</span>
+    </div>
+
+    <!-- BURGERS -->
+    <div class="menu-item">
+      <div>
+        <p class="origin">Senegal / Dakar</p>
+        <h4>MAFE BURGER</h4>
+        <p class="desc">Buns boulanger, boeuf hache frais, sauce mafe cacahuete, oignons crispy, salade, cheddar. Servi avec bananes plantains</p>
         <span class="badge">Best-seller</span>
       </div>
-      <span class="price">19,90 EUR</span>
+      <span class="price">17,50</span>
     </div>
     <div class="menu-item">
       <div>
-        <h4>BURGER LE TONTON</h4>
-        <p class="desc">Steak grille epices africaines, sauce yassa, oignons caramelises, cheddar fume, plantain frit.</p>
-        <span class="badge">Iconique</span>
+        <p class="origin">Benin / Cotonou</p>
+        <h4>WOMAN KING BURGER</h4>
+        <p class="desc">Recette ancestrale beninoise : boeuf hache frais, confits de tomates, oignons crispy, salade, cheddar</p>
       </div>
-      <span class="price">14,90 EUR</span>
+      <span class="price">17,50</span>
+    </div>
+
+    <!-- PLATS -->
+    <div class="menu-item">
+      <div>
+        <p class="origin">Senegal / Dakar</p>
+        <h4>YASSA WE CAN</h4>
+        <p class="desc">Plat national du Senegal ! Poulet marine, sauce aux oignons et a la moutarde, riz et bananes plantains</p>
+        <span class="badge badge--hot">🇸🇳 Incontournable</span>
+      </div>
+      <span class="price">18,00</span>
     </div>
     <div class="menu-item">
       <div>
-        <h4>BROCHETTES SUYA</h4>
-        <p class="desc">Brochettes de boeuf marinees au melange suya (cacahuete, gingembre, piment), accompagnement au choix.</p>
+        <p class="origin">Mali / Kidal</p>
+        <h4>MAFE IS LOVE</h4>
+        <p class="desc">Onctueuse sauce a la cacahuete, tendres morceaux de boeuf, riz et bananes plantains. Le plat afro le plus connu en France !</p>
+        <span class="badge">Best-seller</span>
       </div>
-      <span class="price">16,90 EUR</span>
+      <span class="price">20,50</span>
     </div>
     <div class="menu-item">
       <div>
-        <h4>BOWL AFRO VEGAN</h4>
-        <p class="desc">Patate douce rotie, avocat, plantain, haricots noirs, sauce piment doux, riz coco.</p>
-        <span class="badge">Vegan</span>
+        <p class="origin">Cote d'Ivoire / Abidjan</p>
+        <h4>ALERTE A ABIDJAN 🇨🇮</h4>
+        <p class="desc">Poulet braise juteux et marine comme a Babi, attieke, bananes plantains, crudites et sauce tomate pimentee</p>
       </div>
-      <span class="price">15,90 EUR</span>
+      <span class="price">18,50</span>
     </div>
     <div class="menu-item">
       <div>
-        <h4>BISSAP & GINGEMBRE</h4>
-        <p class="desc">Jus d'hibiscus frais fait maison, sucre de canne, gingembre, menthe fraiche.</p>
-        <span class="badge">Boisson maison</span>
+        <p class="origin">Afrique du Sud</p>
+        <h4>AFRO POKEMON GO</h4>
+        <p class="desc">Riz jaune, avocat, haricots rouges cajun, bananes plantains, champignons sautes epices</p>
+        <span class="badge badge--vegan">🌱 Vegan</span>
       </div>
-      <span class="price">4,50 EUR</span>
+      <span class="price">16,50</span>
+    </div>
+
+    <!-- GRILL -->
+    <div class="menu-item">
+      <div>
+        <p class="origin">Tanzanie - Kenya - RDC</p>
+        <h4>GRILL ME BABY (x2)</h4>
+        <p class="desc">Assortiment de 3 viandes juteuses marinees : dibi d'agneau, poulet marine et magret de canard. Riz, plantains, sauces</p>
+        <span class="badge badge--hot">🔥 Premium</span>
+      </div>
+      <span class="price">34,90/pers</span>
+    </div>
+    <div class="menu-item">
+      <div>
+        <p class="origin">Guinee Equatoriale</p>
+        <h4>FISH MOI LA PAIX</h4>
+        <p class="desc">Poisson frais entier braise aux epices chaudes africaines. Riz jaune et bananes plantains</p>
+      </div>
+      <span class="price">26,90</span>
     </div>
   </div>
+
   <div class="menu-cta">
-    <a href="#" class="btn-lg btn-lg--outline">Telecharger la carte complete (PDF) &darr;</a>
+    <a href="#" class="btn-lg btn-lg--outline">Voir toute la carte &rarr;</a>
+  </div>
+</section>
+
+<!-- COCKTAILS -->
+<section id="cocktails" class="cocktails">
+  <div class="section-header">
+    <p class="label">Destinations alcooliques & sans alcool</p>
+    <h2>NOS <em>Cocktails</em></h2>
+  </div>
+  <div class="cocktails-grid">
+    <div class="cocktail-card">
+      <div class="emoji">🥭</div>
+      <p class="country">Cuba</p>
+      <h4>MANGO MOJITO ROYAL</h4>
+      <p class="desc">Rhum, prosecco, menthe, mangue, citron vert, vanille</p>
+      <p class="price">12 &euro;</p>
+    </div>
+    <div class="cocktail-card">
+      <div class="emoji">🌺</div>
+      <p class="country">Benin</p>
+      <h4>BISSAPOLOGIE</h4>
+      <p class="desc">Vodka, jus de bissap, puree de fraise, vanille, citron vert</p>
+      <p class="price">11 &euro;</p>
+    </div>
+    <div class="cocktail-card">
+      <div class="emoji">🍌</div>
+      <p class="country">Bahamas</p>
+      <h4>AMIRAL BANANA</h4>
+      <p class="desc">Rhum blanc, safari, coco, jus de banane, citron — THE BEST</p>
+      <p class="price">12 &euro;</p>
+    </div>
+    <div class="cocktail-card">
+      <div class="emoji">🍑</div>
+      <p class="country">Guadeloupe</p>
+      <h4>AFRICA MULE</h4>
+      <p class="desc">Rhum ambre, citron vert, sirop de gingembre, ginger beer</p>
+      <p class="price">10,50 &euro;</p>
+    </div>
+    <div class="cocktail-card">
+      <div class="emoji">🔥</div>
+      <p class="country">Cameroun</p>
+      <h4>GINGER ME</h4>
+      <p class="desc">Jus de gingembre, ananas, vanille, citron vert — SANS ALCOOL</p>
+      <p class="price">9 &euro;</p>
+    </div>
+    <div class="cocktail-card">
+      <div class="emoji">🥭</div>
+      <p class="country">Senegal</p>
+      <h4>VIRGIN MOJITO MANGO</h4>
+      <p class="desc">Mangue, citron vert, menthe, vanille, limonade — SANS ALCOOL</p>
+      <p class="price">9 &euro;</p>
+    </div>
+  </div>
+</section>
+
+<!-- DESSERTS -->
+<section class="desserts">
+  <div class="section-header">
+    <p class="label">Et si on finissait sur une note sucree ?</p>
+    <h2>LES <em>Desserts</em></h2>
+  </div>
+  <div class="desserts-grid">
+    <div class="dessert-card">
+      <div class="emoji">🍍</div>
+      <p class="country">Senegal</p>
+      <h4>L'ANANAS ME KIFFE</h4>
+      <p class="desc">Gateau moelleux a l'ananas, chantilly, crumble cacahuete, sauce caramel</p>
+      <p class="price">8,50 &euro;</p>
+    </div>
+    <div class="dessert-card">
+      <div class="emoji">🌺</div>
+      <p class="country">Benin</p>
+      <h4>PANACOTTA BISSAP</h4>
+      <p class="desc">Panacotta onctueuse infusee au bissap, notes florales et acidulees d'hibiscus</p>
+      <p class="price">8 &euro;</p>
+    </div>
+    <div class="dessert-card">
+      <div class="emoji">🍫</div>
+      <p class="country">Afrique du Sud</p>
+      <h4>BROWNIE</h4>
+      <p class="desc">Moelleux, croute de noix de pecan, coulis de bissap, chantilly</p>
+      <p class="price">9 &euro;</p>
+    </div>
   </div>
 </section>
 
@@ -704,7 +999,7 @@ body {
 <section id="services" class="services">
   <div class="section-header">
     <p class="label">Plus qu'un restaurant</p>
-    <h2>Nos <em>services</em></h2>
+    <h2>NOS <em>Services</em></h2>
   </div>
   <div class="services-grid">
     <div class="service-card">
@@ -734,35 +1029,38 @@ body {
 <section id="contact" class="contact">
   <div class="section-header">
     <p class="label">Venez nous voir</p>
-    <h2>Nous <em>trouver</em></h2>
+    <h2>NOUS <em>Trouver</em></h2>
   </div>
   <div class="contact-grid">
     <div class="contact-info">
-      <h3>Les Tontons Afro</h3>
+      <h3>LES TONTONS AFRO</h3>
       <div class="info-line">
         <div class="icon-sm">📍</div>
-        <div><strong style="color:var(--text-cream)">42 Rue de la Monnaie</strong><br>59000 Lille — Vieux-Lille<br><small>Metro Rihour (8 min) &bull; Bus Lion d'Or (3 min)</small></div>
+        <div><strong style="color:var(--yellow)">42 Rue de la Monnaie</strong><br>59000 Lille — Vieux-Lille<br><small style="color:rgba(255,255,255,0.4)">Metro Rihour (8 min) &bull; Bus Lion d'Or (3 min)</small></div>
       </div>
       <div class="info-line">
         <div class="icon-sm">📞</div>
-        <div><a href="tel:+33766385371" style="color:var(--accent-gold);text-decoration:none">07 66 38 53 71</a></div>
+        <div><a href="tel:+33766385371" style="color:var(--yellow);text-decoration:none;font-weight:600">07 66 38 53 71</a></div>
       </div>
       <div class="info-line">
         <div class="icon-sm">📧</div>
-        <div><a href="mailto:lille.lestontonsafro@gmail.com" style="color:var(--accent-gold);text-decoration:none">lille.lestontonsafro@gmail.com</a></div>
+        <div><a href="mailto:lille.lestontonsafro@gmail.com" style="color:var(--yellow);text-decoration:none">lille.lestontonsafro@gmail.com</a></div>
       </div>
       <div class="info-line">
         <div class="icon-sm">🕐</div>
         <div>
-          <strong style="color:var(--text-cream)">Horaires</strong><br>
+          <strong style="color:var(--white)">Horaires</strong><br>
           Lun-Jeu, Dim : 12h-15h / 19h-23h<br>
           Ven : 19h-23h<br>
           Sam : 12h-23h (service continu)
         </div>
       </div>
       <div class="info-line">
-        <div class="icon-sm">🅿</div>
-        <div>Parking Indigo Vieux-Lille<br><small>5 avenue du Peuple Belge</small></div>
+        <div class="icon-sm">🛵</div>
+        <div>
+          <strong style="color:var(--white)">Livraison</strong><br>
+          <a href="#" style="color:var(--yellow);text-decoration:none">Deliveroo</a> &amp; <a href="#" style="color:var(--yellow);text-decoration:none">Uber Eats</a>
+        </div>
       </div>
     </div>
     <div class="contact-map">
