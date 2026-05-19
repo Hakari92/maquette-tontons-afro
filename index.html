@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0d0906">
+
+<!-- SEO LOCAL — Les Tontons Afro Lille -->
+<title>Les Tontons Afro — Cuisine Afronomique | Lille Vieux-Lille</title>
+<meta name="description" content="Les Tontons Afro, cuisine afronomique au coeur du Vieux-Lille. Poulet Yassa, Mafe de Boeuf, burgers afro, plats halal, vegetariens et vegan. 42 Rue de la Monnaie. Reservation, click & collect, traiteur, privatisation.">
+<meta name="keywords" content="restaurant africain Lille, cuisine afronomique, Les Tontons Afro, halal Lille, Vieux-Lille restaurant, Poulet Yassa Lille, Mafe Lille, burger afro, traiteur africain Lille">
+<meta name="geo.region" content="FR-59">
+<meta name="geo.placename" content="Lille">
+<meta name="author" content="Les Tontons Afro — Tonton Gaudrey">
+<link rel="canonical" href="https://www.lestontonsafro.fr/">
+
+<meta property="og:type" content="restaurant">
+<meta property="og:title" content="Les Tontons Afro — Cuisine Afronomique | Lille">
+<meta property="og:description" content="Cuisine afronomique au coeur du Vieux-Lille. Halal, vegetarien, vegan. Reservation en ligne.">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:url" content="https://www.lestontonsafro.fr/">
+
+<!-- JSON-LD Restaurant Schema -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "name": "Les Tontons Afro",
+  "image": "https://www.lestontonsafro.fr/wp-content/uploads/2023/11/Home-Slideshow-4-1170x660-c-center.jpg",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "42 Rue de la Monnaie",
+    "addressLocality": "Lille",
+    "postalCode": "59000",
+    "addressCountry": "FR"
+  },
+  "telephone": "+33766385371",
+  "servesCuisine": ["African", "Afro-fusion", "Halal"],
+  "priceRange": "$$",
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "6247"
+  },
+  "openingHoursSpecification": [
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "12:00", "closes": "15:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Sunday"], "opens": "19:00", "closes": "23:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Friday"], "opens": "19:00", "closes": "23:00"},
+    {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Saturday"], "opens": "12:00", "closes": "23:00"}
+  ]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================
+   LES TONTONS AFRO — Maquette Premium
+   by Common Studio
+   Codes: Afronomique, warm earth, gold accents
+   ============================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-deep: #080604;
+  --bg-dark: #0d0906;
+  --bg-card: #161210;
+  --bg-card-hover: #1e1814;
+  --bg-warm: #1a1410;
+  --accent-gold: #C8964E;
+  --accent-orange: #E8722A;
+  --accent-amber: #D4A843;
+  --accent-red: #B5332E;
+  --accent-green: #4A7C59;
+  --text-cream: #F5EDE4;
+  --text-warm: #D4C4B0;
+  --text-muted: #9A8A7A;
+  --text-dim: #6B5B4A;
+  --gradient-afro: linear-gradient(135deg, #E8722A 0%, #D4A843 50%, #C8964E 100%);
+  --gradient-warm: linear-gradient(180deg, rgba(232,114,42,0.08) 0%, transparent 60%);
+  --font-display: 'Playfair Display', serif;
+  --font-heading: 'Bebas Neue', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --radius: 16px;
+  --max-w: 1200px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-dark);
+  color: var(--text-cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ===== UTILITY ===== */
+.container { max-width: var(--max-w); margin: 0 auto; padding: 0 2rem; }
+
+/* ===== NAV ===== */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(8,6,4,0.88);
+  backdrop-filter: blur(24px) saturate(1.5);
+  border-bottom: 1px solid rgba(200,150,78,0.08);
+  height: 72px;
+  display: flex; align-items: center;
+  padding: 0 clamp(1rem, 4vw, 3rem);
+  transition: all 0.3s;
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; width: 100%; max-width: var(--max-w); margin: 0 auto; }
+.nav-brand {
+  display: flex; align-items: center; gap: 12px;
+}
+.nav-brand-icon {
+  width: 38px; height: 38px;
+  background: var(--gradient-afro);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.2rem;
+}
+.nav-brand-text {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+  color: var(--text-cream);
+}
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+  position: relative;
+}
+.nav-links a:hover { color: var(--accent-gold); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+  background: var(--accent-gold); transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-actions { display: flex; gap: 12px; align-items: center; }
+.nav-btn {
+  padding: 10px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+  transition: all 0.3s;
+}
+.nav-btn--ghost { color: var(--accent-gold); border: 1px solid rgba(200,150,78,0.3); background: transparent; }
+.nav-btn--ghost:hover { background: rgba(200,150,78,0.1); }
+.nav-btn--fill { background: var(--accent-orange); color: #fff; border: none; }
+.nav-btn--fill:hover { background: #d4631f; transform: translateY(-1px); }
+
+/* ===== HERO ===== */
+.hero {
+  min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 100px 2rem 80px;
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-deep);
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(232,114,42,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 30%, rgba(200,150,78,0.1) 0%, transparent 40%),
+    radial-gradient(ellipse at 50% 90%, rgba(181,51,46,0.08) 0%, transparent 40%);
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: 0; left: 0; right: 0; height: 200px;
+  background: linear-gradient(transparent, var(--bg-dark));
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+  max-width: var(--max-w); margin: 0 auto; width: 100%;
+}
+.hero-content { }
+.hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(200,150,78,0.1);
+  border: 1px solid rgba(200,150,78,0.2);
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 0.75rem;
+  color: var(--accent-gold);
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+.hero-eyebrow .dot { width: 6px; height: 6px; background: var(--accent-orange); border-radius: 50%; }
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 5.5vw, 4.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+  color: var(--text-cream);
+}
+.hero h1 em {
+  font-style: italic;
+  background: var(--gradient-afro);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero-desc {
+  font-size: 1.05rem;
+  color: var(--text-warm);
+  max-width: 480px;
+  margin-bottom: 2rem;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.hero-tags {
+  display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 2.5rem;
+}
+.hero-tag {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 50px;
+  padding: 6px 14px;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+.btn-lg {
+  padding: 16px 32px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.3px;
+  transition: all 0.3s;
+  display: inline-flex; align-items: center; gap: 8px;
+}
+.btn-lg--primary { background: var(--accent-orange); color: #fff; }
+.btn-lg--primary:hover { background: #d4631f; transform: translateY(-2px); box-shadow: 0 12px 40px rgba(232,114,42,0.25); }
+.btn-lg--outline { border: 1px solid rgba(200,150,78,0.3); color: var(--accent-gold); background: transparent; }
+.btn-lg--outline:hover { background: rgba(200,150,78,0.08); }
+
+/* Hero visual */
+.hero-visual {
+  position: relative;
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-img-main {
+  width: 100%; aspect-ratio: 4/5;
+  background: var(--bg-card);
+  border-radius: 24px;
+  border: 1px solid rgba(200,150,78,0.1);
+  overflow: hidden;
+  position: relative;
+}
+.hero-img-main img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.hero-img-main .placeholder-text {
+  position: absolute; inset: 0;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 8px;
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.hero-img-main .placeholder-text span { font-size: 3rem; }
+
+.hero-float-card {
+  position: absolute; bottom: -20px; left: -30px;
+  background: rgba(22,18,16,0.95);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(200,150,78,0.15);
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+.hero-float-card .rating { font-family: var(--font-heading); font-size: 2rem; color: var(--accent-gold); }
+.hero-float-card .rating-text { font-size: 0.75rem; color: var(--text-muted); }
+.hero-float-card .rating-text strong { color: var(--text-cream); display: block; font-size: 0.85rem; }
+
+.hero-float-badge {
+  position: absolute; top: 20px; right: -15px;
+  background: var(--accent-green);
+  color: #fff;
+  border-radius: 50px;
+  padding: 8px 16px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== SOCIAL PROOF BAR ===== */
+.proof-bar {
+  padding: 2rem;
+  background: var(--bg-deep);
+  border-top: 1px solid rgba(200,150,78,0.06);
+  border-bottom: 1px solid rgba(200,150,78,0.06);
+}
+.proof-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;
+  align-items: center;
+}
+.proof-item {
+  display: flex; align-items: center; gap: 10px;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+.proof-item strong { color: var(--accent-gold); font-size: 1.1rem; }
+.proof-sep { width: 1px; height: 30px; background: rgba(200,150,78,0.15); }
+
+/* ===== CONCEPT ===== */
+.concept { padding: 100px 2rem; background: var(--bg-dark); }
+.concept-grid {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+}
+.concept-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(200,150,78,0.08);
+  border-radius: var(--radius);
+  padding: 2.5rem 2rem;
+  transition: all 0.4s;
+  position: relative; overflow: hidden;
+}
+.concept-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--gradient-afro); opacity: 0; transition: opacity 0.4s;
+}
+.concept-card:hover { background: var(--bg-card-hover); transform: translateY(-4px); }
+.concept-card:hover::before { opacity: 1; }
+.concept-icon { font-size: 2rem; margin-bottom: 1rem; }
+.concept-card h3 {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: var(--text-cream);
+  margin-bottom: 0.5rem;
+}
+.concept-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+
+/* ===== MENU SECTION ===== */
+.menu-section { padding: 100px 2rem; background: linear-gradient(var(--bg-dark), var(--bg-deep)); }
+.section-header {
+  text-align: center; margin-bottom: 3.5rem;
+}
+.section-header .label {
+  font-size: 0.75rem; color: var(--accent-gold);
+  text-transform: uppercase; letter-spacing: 3px; font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.section-header h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: var(--text-cream);
+}
+.section-header h2 em {
+  font-style: italic;
+  color: var(--accent-gold);
+}
+.section-header p {
+  color: var(--text-muted); font-size: 1rem; margin-top: 0.5rem; max-width: 500px; margin-left: auto; margin-right: auto;
+}
+.menu-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.2rem;
+}
+.menu-item {
+  background: var(--bg-card);
+  border: 1px solid rgba(200,150,78,0.08);
+  border-radius: 14px;
+  padding: 24px 28px;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+  transition: all 0.3s;
+}
+.menu-item:hover {
+  background: var(--bg-card-hover);
+  border-color: rgba(200,150,78,0.2);
+}
+.menu-item h4 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  color: var(--text-cream);
+  margin-bottom: 4px;
+}
+.menu-item .desc { color: var(--text-muted); font-size: 0.82rem; line-height: 1.5; }
+.menu-item .badge {
+  display: inline-block; margin-top: 8px;
+  background: rgba(200,150,78,0.1); color: var(--accent-gold);
+  padding: 3px 10px; border-radius: 20px; font-size: 0.7rem;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px;
+}
+.menu-item .price {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  color: var(--accent-orange);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.menu-cta { text-align: center; margin-top: 2.5rem; }
+
+/* ===== SERVICES ===== */
+.services { padding: 80px 2rem; background: var(--bg-deep); }
+.services-grid {
+  max-width: var(--max-w); margin: 0 auto;
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+}
+.service-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(200,150,78,0.06);
+  border-radius: var(--radius);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: all 0.3s;
+}
+.service-card:hover { border-color: rgba(200,150,78,0.2); transform: translateY(-3px); }
+.service-card .icon { font-size: 2rem; margin-bottom: 0.8rem; }
+.service-card h4 {
+  font-family: var(--font-heading); font-size: 1.1rem;
+  letter-spacing: 1px; color: var(--text-cream); margin-bottom: 0.4rem;
+}
+.service-card p { color: var(--text-dim); font-size: 0.8rem; }
+
+/* ===== CONTACT ===== */
+.contact { padding: 100px 2rem; background: var(--bg-dark); }
+.contact-grid {
+  max-width: 900px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+}
+.contact-info {
+  background: var(--bg-card);
+  border: 1px solid rgba(200,150,78,0.1);
+  border-radius: var(--radius);
+  padding: 2.5rem;
+}
+.contact-info h3 {
+  font-family: var(--font-display); font-size: 1.8rem; font-weight: 700;
+  margin-bottom: 1.5rem; color: var(--text-cream);
+}
+.info-line {
+  display: flex; align-items: flex-start; gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  color: var(--text-warm); font-size: 0.9rem;
+}
+.info-line:last-child { border-bottom: none; }
+.info-line .icon-sm {
+  width: 36px; height: 36px;
+  background: rgba(200,150,78,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; flex-shrink: 0;
+}
+
+.contact-map {
+  background: var(--bg-card);
+  border: 1px solid rgba(200,150,78,0.1);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  min-height: 300px;
+}
+.contact-map iframe { width: 100%; height: 100%; border: 0; filter: invert(0.92) hue-rotate(180deg) brightness(0.8) contrast(1.2); }
+
+/* ===== FOOTER ===== */
+.footer {
+  background: var(--bg-deep);
+  padding: 3rem 2rem 2rem;
+  border-top: 1px solid rgba(200,150,78,0.06);
+}
+.footer-inner {
+  max-width: var(--max-w); margin: 0 auto;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.footer-brand { font-family: var(--font-heading); font-size: 1.2rem; letter-spacing: 2px; color: var(--text-muted); }
+.footer-socials { display: flex; gap: 12px; }
+.footer-socials a {
+  width: 40px; height: 40px;
+  background: var(--bg-card);
+  border: 1px solid rgba(200,150,78,0.1);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--text-muted); text-decoration: none; font-size: 1.1rem;
+  transition: all 0.3s;
+}
+.footer-socials a:hover { border-color: var(--accent-gold); color: var(--accent-gold); }
+.footer-credit {
+  text-align: center; margin-top: 2rem; padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.75rem; color: var(--text-dim);
+}
+.footer-credit a { color: var(--accent-orange); text-decoration: none; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .hero-inner { grid-template-columns: 1fr; text-align: center; }
+  .hero-desc { margin-left: auto; margin-right: auto; }
+  .hero-tags { justify-content: center; }
+  .hero-actions { justify-content: center; }
+  .hero-visual { display: none; }
+  .menu-grid { grid-template-columns: 1fr; }
+  .concept-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .contact-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .footer-inner { flex-direction: column; gap: 1rem; }
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+.hero-content > * { animation: fadeUp 0.8s ease-out both; }
+.hero-content > *:nth-child(2) { animation-delay: 0.1s; }
+.hero-content > *:nth-child(3) { animation-delay: 0.2s; }
+.hero-content > *:nth-child(4) { animation-delay: 0.3s; }
+.hero-content > *:nth-child(5) { animation-delay: 0.4s; }
+.hero-content > *:nth-child(6) { animation-delay: 0.5s; }
+.hero-float-card { animation: float 4s ease-in-out infinite; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-brand">
+      <div class="nav-brand-icon">🔥</div>
+      <span class="nav-brand-text">LES TONTONS AFRO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#concept">Concept</a></li>
+      <li><a href="#menu">Carte</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <a href="#" class="nav-btn nav-btn--ghost">Click & Collect</a>
+      <a href="#contact" class="nav-btn nav-btn--fill">Reserver</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-eyebrow">
+        <span class="dot"></span>
+        Cuisine Afronomique — Vieux-Lille
+      </div>
+      <h1>L'Afrique<br>dans votre <em>assiette</em></h1>
+      <p class="hero-desc">Des saveurs d'Afrique de l'Ouest revisitees avec audace. Halal, vegetarien, vegan — tout le monde a sa place chez les Tontons.</p>
+      <div class="hero-tags">
+        <span class="hero-tag">Halal certifie</span>
+        <span class="hero-tag">Vegetarien</span>
+        <span class="hero-tag">Vegan</span>
+        <span class="hero-tag">Sans gluten</span>
+      </div>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-lg btn-lg--primary">Reserver une table &rarr;</a>
+        <a href="#menu" class="btn-lg btn-lg--outline">Decouvrir la carte</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-img-main">
+        <div class="placeholder-text">
+          <span>🍔</span>
+          Photo Hero<br>Plat signature
+        </div>
+      </div>
+      <div class="hero-float-card">
+        <div class="rating">4.6</div>
+        <div class="rating-text">
+          <strong>Google Reviews</strong>
+          6 247 avis
+        </div>
+      </div>
+      <div class="hero-float-badge">100% Halal</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="proof-inner">
+    <div class="proof-item"><strong>#66</strong> sur 2 220 restaurants a Lille</div>
+    <div class="proof-sep"></div>
+    <div class="proof-item"><strong>6 247</strong> avis Google</div>
+    <div class="proof-sep"></div>
+    <div class="proof-item"><strong>38K</strong> abonnes Instagram</div>
+    <div class="proof-sep"></div>
+    <div class="proof-item"><strong>4.8/5</strong> sur Facebook</div>
+  </div>
+</div>
+
+<!-- CONCEPT -->
+<section id="concept" class="concept">
+  <div class="section-header">
+    <p class="label">Notre philosophie</p>
+    <h2>La cuisine <em>Afronomique</em></h2>
+    <p>Plus qu'un restaurant, une experience culturelle au coeur du Vieux-Lille</p>
+  </div>
+  <div class="concept-grid">
+    <div class="concept-card">
+      <div class="concept-icon">🌍</div>
+      <h3>HERITAGE AFRICAIN</h3>
+      <p>Des recettes transmises de generation en generation, revisitees avec une touche contemporaine par Tonton Gaudrey.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-icon">🔥</div>
+      <h3>FAIT MAISON</h3>
+      <p>Chaque sauce, chaque marinade, chaque accompagnement est prepare sur place avec des produits frais selectionnes.</p>
+    </div>
+    <div class="concept-card">
+      <div class="concept-icon">🤝</div>
+      <h3>POUR TOUS</h3>
+      <p>Halal certifie, options vegetariennes, vegan et sans gluten. Chez les Tontons, tout le monde mange bien.</p>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu-section">
+  <div class="section-header">
+    <p class="label">Nos plats signatures</p>
+    <h2>La <em>Carte</em></h2>
+    <p>Saveurs authentiques d'Afrique de l'Ouest</p>
+  </div>
+  <div class="menu-grid">
+    <div class="menu-item">
+      <div>
+        <h4>POULET YASSA</h4>
+        <p class="desc">Poulet marine aux oignons caramelises, citron, moutarde, olives. Servi avec riz parfume.</p>
+        <span class="badge">Signature du chef</span>
+      </div>
+      <span class="price">18,90 EUR</span>
+    </div>
+    <div class="menu-item">
+      <div>
+        <h4>MAFE DE BOEUF</h4>
+        <p class="desc">Ragoute de boeuf mijoter dans une sauce onctueuse a l'arachide, legumes de saison.</p>
+        <span class="badge">Best-seller</span>
+      </div>
+      <span class="price">19,90 EUR</span>
+    </div>
+    <div class="menu-item">
+      <div>
+        <h4>BURGER LE TONTON</h4>
+        <p class="desc">Steak grille epices africaines, sauce yassa, oignons caramelises, cheddar fume, plantain frit.</p>
+        <span class="badge">Iconique</span>
+      </div>
+      <span class="price">14,90 EUR</span>
+    </div>
+    <div class="menu-item">
+      <div>
+        <h4>BROCHETTES SUYA</h4>
+        <p class="desc">Brochettes de boeuf marinees au melange suya (cacahuete, gingembre, piment), accompagnement au choix.</p>
+      </div>
+      <span class="price">16,90 EUR</span>
+    </div>
+    <div class="menu-item">
+      <div>
+        <h4>BOWL AFRO VEGAN</h4>
+        <p class="desc">Patate douce rotie, avocat, plantain, haricots noirs, sauce piment doux, riz coco.</p>
+        <span class="badge">Vegan</span>
+      </div>
+      <span class="price">15,90 EUR</span>
+    </div>
+    <div class="menu-item">
+      <div>
+        <h4>BISSAP & GINGEMBRE</h4>
+        <p class="desc">Jus d'hibiscus frais fait maison, sucre de canne, gingembre, menthe fraiche.</p>
+        <span class="badge">Boisson maison</span>
+      </div>
+      <span class="price">4,50 EUR</span>
+    </div>
+  </div>
+  <div class="menu-cta">
+    <a href="#" class="btn-lg btn-lg--outline">Telecharger la carte complete (PDF) &darr;</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-header">
+    <p class="label">Plus qu'un restaurant</p>
+    <h2>Nos <em>services</em></h2>
+  </div>
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="icon">🍽</div>
+      <h4>RESTAURANT</h4>
+      <p>Sur place, au coeur du Vieux-Lille</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">📦</div>
+      <h4>CLICK & COLLECT</h4>
+      <p>Commandez, on prepare, vous recuperez</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🎉</div>
+      <h4>PRIVATISATION</h4>
+      <p>Evenements prives jusqu'a 80 personnes</p>
+    </div>
+    <div class="service-card">
+      <div class="icon">🚚</div>
+      <h4>TRAITEUR</h4>
+      <p>On vient chez vous avec nos saveurs</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="section-header">
+    <p class="label">Venez nous voir</p>
+    <h2>Nous <em>trouver</em></h2>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info">
+      <h3>Les Tontons Afro</h3>
+      <div class="info-line">
+        <div class="icon-sm">📍</div>
+        <div><strong style="color:var(--text-cream)">42 Rue de la Monnaie</strong><br>59000 Lille — Vieux-Lille<br><small>Metro Rihour (8 min) &bull; Bus Lion d'Or (3 min)</small></div>
+      </div>
+      <div class="info-line">
+        <div class="icon-sm">📞</div>
+        <div><a href="tel:+33766385371" style="color:var(--accent-gold);text-decoration:none">07 66 38 53 71</a></div>
+      </div>
+      <div class="info-line">
+        <div class="icon-sm">📧</div>
+        <div><a href="mailto:lille.lestontonsafro@gmail.com" style="color:var(--accent-gold);text-decoration:none">lille.lestontonsafro@gmail.com</a></div>
+      </div>
+      <div class="info-line">
+        <div class="icon-sm">🕐</div>
+        <div>
+          <strong style="color:var(--text-cream)">Horaires</strong><br>
+          Lun-Jeu, Dim : 12h-15h / 19h-23h<br>
+          Ven : 19h-23h<br>
+          Sam : 12h-23h (service continu)
+        </div>
+      </div>
+      <div class="info-line">
+        <div class="icon-sm">🅿</div>
+        <div>Parking Indigo Vieux-Lille<br><small>5 avenue du Peuple Belge</small></div>
+      </div>
+    </div>
+    <div class="contact-map">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2530.8!2d3.0598!3d50.6407!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c2d579a2000001%3A0x0!2s42+Rue+de+la+Monnaie%2C+59000+Lille!5e0!3m2!1sfr!2sfr!4v1" allowfullscreen loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">LES TONTONS AFRO</div>
+    <div class="footer-socials">
+      <a href="https://instagram.com/lestontonsafro" title="Instagram">📸</a>
+      <a href="https://facebook.com/lestontonsafro" title="Facebook">👥</a>
+      <a href="https://tiktok.com/@lestontonsafro" title="TikTok">🎵</a>
+      <a href="https://linkedin.com/company/burger-afro" title="LinkedIn">💼</a>
+    </div>
+  </div>
+  <div class="footer-credit">
+    Site cree avec passion par <a href="https://commonstudio.fr">Common Studio</a> — Sites web premium pour commerces locaux
+  </div>
+</footer>
+
+</body>
+</html>
