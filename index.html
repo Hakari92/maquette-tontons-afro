@@ -151,6 +151,32 @@ body {
   from { transform: translateX(60px); opacity: 0; }
   to { transform: translateX(0); opacity: 1; }
 }
+@keyframes neonLetterGlow {
+  0% { text-shadow: 0 0 7px rgba(255,214,0,0.8), 0 0 15px rgba(255,214,0,0.4), 0 0 30px rgba(255,214,0,0.2); }
+  25% { text-shadow: 0 0 7px rgba(255,61,127,0.8), 0 0 15px rgba(255,61,127,0.4), 0 0 30px rgba(255,61,127,0.2); }
+  50% { text-shadow: 0 0 7px rgba(0,180,216,0.8), 0 0 15px rgba(0,180,216,0.4), 0 0 30px rgba(0,180,216,0.2); }
+  75% { text-shadow: 0 0 7px rgba(168,85,247,0.8), 0 0 15px rgba(168,85,247,0.4), 0 0 30px rgba(168,85,247,0.2); }
+  100% { text-shadow: 0 0 7px rgba(255,214,0,0.8), 0 0 15px rgba(255,214,0,0.4), 0 0 30px rgba(255,214,0,0.2); }
+}
+@keyframes heroTextSwing {
+  0% { transform: translateX(0) scale(1); z-index: 1; }
+  25% { transform: translateX(40px) scale(1.03); z-index: 3; }
+  50% { transform: translateX(0) scale(1); z-index: 1; }
+  75% { transform: translateX(-30px) scale(0.97); z-index: -1; }
+  100% { transform: translateX(0) scale(1); z-index: 1; }
+}
+@keyframes soapBubbleGlow {
+  0% { background-position: 0% 50%; filter: hue-rotate(0deg); }
+  50% { background-position: 100% 50%; filter: hue-rotate(180deg); }
+  100% { background-position: 0% 50%; filter: hue-rotate(360deg); }
+}
+@keyframes neonTextStroke {
+  0% { -webkit-text-stroke-color: rgba(255,214,0,0.6); }
+  25% { -webkit-text-stroke-color: rgba(255,61,127,0.6); }
+  50% { -webkit-text-stroke-color: rgba(0,180,216,0.6); }
+  75% { -webkit-text-stroke-color: rgba(168,85,247,0.6); }
+  100% { -webkit-text-stroke-color: rgba(255,214,0,0.6); }
+}
 
 /* ===== SCROLL REVEAL ===== */
 .reveal {
@@ -324,12 +350,34 @@ body {
   margin-bottom: 1.5rem;
   color: var(--black);
   letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
 }
+.hero h1 .neon-letter {
+  display: inline-block;
+  animation: neonLetterGlow 4s ease-in-out infinite;
+  -webkit-text-stroke: 1px transparent;
+  animation-fill-mode: both;
+}
+.hero h1 .hero-swing-line {
+  display: block;
+  animation: heroTextSwing 8s ease-in-out infinite;
+  position: relative;
+}
+.hero h1 .hero-swing-line:nth-child(2) { animation-delay: -2s; }
+.hero h1 .hero-swing-line:nth-child(3) { animation-delay: -4s; }
 .hero h1 em {
   font-style: italic;
   font-family: var(--font-display);
-  color: var(--pink-hot);
+  color: transparent;
   letter-spacing: 0;
+  background: linear-gradient(90deg, var(--pink-hot), #A855F7, var(--blue), var(--pink-hot));
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: soapBubbleGlow 5s ease infinite;
+  -webkit-text-stroke: 1px rgba(255,61,127,0.3);
+  filter: drop-shadow(0 0 10px rgba(255,61,127,0.3));
 }
 .hero-desc {
   font-size: 1.1rem;
@@ -447,20 +495,54 @@ body {
 .proof-item strong { color: var(--white); font-size: 1.3rem; font-family: var(--font-heading); letter-spacing: 1px; }
 .proof-sep { width: 2px; height: 30px; background: rgba(255,255,255,0.3); }
 
-/* ===== CONCEPT MARQUEE ===== */
+/* ===== HOSPITALITY MARQUEE — Neon Soap Bubble ===== */
 .concept-marquee {
-  background: var(--black);
-  padding: 15px 0;
+  background: linear-gradient(135deg, #0A0A0A 0%, #1a0a2e 30%, #0a1628 60%, #0A0A0A 100%);
+  padding: 18px 0;
   overflow: hidden;
   white-space: nowrap;
+  position: relative;
+  border-top: 1px solid rgba(168,85,247,0.2);
+  border-bottom: 1px solid rgba(0,180,216,0.2);
+}
+.concept-marquee::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(255,214,0,0.05) 15%,
+    rgba(255,61,127,0.08) 30%,
+    rgba(0,180,216,0.08) 50%,
+    rgba(168,85,247,0.08) 70%,
+    rgba(255,214,0,0.05) 85%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: soapBubbleGlow 6s ease infinite;
+  pointer-events: none;
 }
 .concept-marquee-track {
   display: inline-block;
-  animation: marquee 15s linear infinite;
+  animation: marquee 25s linear infinite;
   font-family: var(--font-heading);
-  font-size: 2rem;
+  font-size: 1.6rem;
+  letter-spacing: 4px;
+}
+.concept-marquee-track .mq-word {
+  color: transparent;
+  background: linear-gradient(90deg, var(--yellow), var(--pink-hot), var(--blue), #A855F7, var(--yellow));
+  background-size: 400% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: soapBubbleGlow 5s ease infinite;
+  filter: drop-shadow(0 0 6px rgba(255,214,0,0.3));
+}
+.concept-marquee-track .mq-sep {
   color: rgba(255,255,255,0.15);
-  letter-spacing: 8px;
+  margin: 0 12px;
+  font-size: 1rem;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 4px rgba(168,85,247,0.4));
 }
 
 /* ===== CONCEPT ===== */
@@ -994,7 +1076,7 @@ body {
         <span class="dot"></span>
         Cuisine Afronomique &mdash; Vieux-Lille
       </div>
-      <h1>L'AFRIQUE<br>DANS VOTRE<br><em>assiette</em></h1>
+      <h1><span class="hero-swing-line">L'AFRIQUE</span><span class="hero-swing-line">DANS VOTRE</span><span class="hero-swing-line"><em>assiette</em></span></h1>
       <p class="hero-desc">Premi&egrave;re compagnie a&eacute;rienne low cost &agrave; destination des pays afro-carib&eacute;ens ! Halal, v&eacute;g&eacute;tarien, vegan &mdash; tout le monde a sa place chez les Tontons.</p>
       <div class="hero-tags">
         <span class="hero-tag">100% Halal</span>
@@ -1045,8 +1127,26 @@ body {
 <!-- CONCEPT MARQUEE -->
 <div class="concept-marquee">
   <div class="concept-marquee-track">
-    CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull;&nbsp;
-    CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull; CONCEPT &bull;&nbsp;
+    <span class="mq-word">BIENVENUE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">AKWABA</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">WELCOME</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">HOSPITALIT&Eacute;</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">SAVEURS D'AFRIQUE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">TERANGA</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">BIENVENIDO</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">JOIE DE VIVRE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">PARTAGE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">AFRONOMIQUE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">BIENVENUE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">AKWABA</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">WELCOME</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">HOSPITALIT&Eacute;</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">SAVEURS D'AFRIQUE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">TERANGA</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">BIENVENIDO</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">JOIE DE VIVRE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">PARTAGE</span><span class="mq-sep">&#10038;</span>
+    <span class="mq-word">AFRONOMIQUE</span><span class="mq-sep">&#10038;</span>&nbsp;
   </div>
 </div>
 
@@ -1268,7 +1368,7 @@ body {
       </div>
     </div>
     <div class="cocktail-card">
-      <img class="card-img" src="https://images.unsplash.com/photo-1513558161293-cdaf765ed514?w=400&h=300&fit=crop&crop=center" alt="Virgin Mojito Mango">
+      <img class="card-img" src="https://images.unsplash.com/photo-1544145945-f90425340c7e?w=400&h=300&fit=crop&crop=center" alt="Virgin Mojito Mango">
       <div class="card-body">
         <p class="country">S&eacute;n&eacute;gal</p>
         <h4>VIRGIN MOJITO MANGO</h4>
@@ -1458,6 +1558,23 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 reveals.forEach(el => observer.observe(el));
+
+// Neon letter-by-letter animation on hero h1
+document.querySelectorAll('.hero h1 .hero-swing-line').forEach(line => {
+  const em = line.querySelector('em');
+  if (!em) {
+    const text = line.textContent;
+    line.innerHTML = '';
+    text.split('').forEach((char, i) => {
+      if (char === ' ') { line.innerHTML += ' '; return; }
+      const span = document.createElement('span');
+      span.className = 'neon-letter';
+      span.textContent = char;
+      span.style.animationDelay = (i * 0.15) + 's';
+      line.appendChild(span);
+    });
+  }
+});
 
 // Nav background on scroll
 const nav = document.querySelector('.nav');
